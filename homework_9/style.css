@@ -1,0 +1,378 @@
+.container_item {
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    border: 2px solid gray;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hi_item {
+    height: 600px;
+}
+
+.container {
+    width: 400px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.left {
+    justify-content: left;
+}
+
+.bottom {
+    align-items: flex-end;
+}
+
+.container_column {
+    width: 400px;
+}
+
+.container_task4 {
+    width: 300px;
+    height: 300px;
+}
+
+.container_task6 {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: end;
+}
+
+.row {
+    width: 100%;
+    height: 150px;
+    display: flex;
+}
+
+.circle_big {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 80px 80px, #5cabff, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle_small {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 60px 60px, #ec5cff, #000);
+    margin-left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle_big:hover {
+    animation: move_big 1s linear;
+    animation-fill-mode: forwards;
+}
+
+.circle_big:hover ~ .circle_small {
+    animation: move_small 1s linear;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+}
+
+
+@keyframes move_big {
+    0% {
+        transform: translateX(0px) rotate(0deg);
+      }
+    100% {
+        transform: translateX(112px) rotate(360deg);    
+    }
+}
+
+@keyframes move_small {
+    0% {
+        transform: translateX(0px) rotate(0deg);
+      }
+    100% {
+        transform: translateX(300px) rotate(360deg);    
+    }
+}
+
+
+.cube_red {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+}
+
+.cube_blue {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    margin-top: 20px;
+}
+
+.cube_red:hover {
+    animation: size 2s linear;
+    animation-fill-mode: forwards;
+}
+
+.cube_red:hover ~ .cube_blue {
+    animation: size 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+
+@keyframes size {
+    100% {
+        width: 400px;    
+    }
+}
+
+
+.hi {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    z-index: -2;
+}
+
+.cube_1, .cube_2, .cube_3, .cube_4 {
+    width: 150px;
+    height: 150px;
+}
+
+.cube_1 {
+    background-color: red;
+}
+
+.cube_2 {
+    background-color: yellow;
+}
+
+.cube_3 {
+    background-color: blue;
+}
+
+.cube_4 {
+    background-color: green;
+}
+
+.container_task4:hover .cube_1 {
+    animation: rotate 1s;
+    transform-origin: left top;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+}
+
+.container_task4:hover .cube_2 {
+    animation: rotate 1s;
+    transform-origin: right top;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+}
+
+.container_task4:hover .cube_3 {
+    animation: rotate 1s;
+    transform-origin: left bottom;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+}
+
+.container_task4:hover .cube_4 {
+    animation: rotate 1s;
+    transform-origin: right bottom;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+}
+
+
+@keyframes rotate {
+    100% {
+        transform: rotate(90deg);    
+    }
+}
+
+.container_hover {
+    width: 350px;
+    height: 350px;
+    z-index: 1;
+}
+
+.container_green {
+    width: 350px;
+    height: 350px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_red {
+    width: 250px;
+    height: 250px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_blue {
+    width: 180px;
+    height: 180px;
+    background-color: blue;
+}
+
+.container_hover:hover .container_green {
+    animation: rotate_cubes 15s infinite;
+    transform-origin: center center;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+}
+
+.container_hover:hover .container_red {
+    animation: rotate_cubes 10s infinite;
+    transform-origin: center center;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+}
+
+.container_hover:hover .container_blue {
+    animation: rotate_cubes 5s infinite;
+    transform-origin: center center;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+}
+
+@keyframes rotate_cubes {
+    100% {
+        transform: rotate(360deg);    
+    }
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    animation: move_cube 15s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+}
+
+@keyframes move_cube {
+    12.5% {
+        transform: translateX(300px);
+        background-color: green;   
+    }
+
+    25% {
+        transform: translateX(300px);
+        transform: translateY(-300px);
+        background-color: red;
+    }
+
+    37.5% {
+        transform: translateY(-300px);
+        transform: translateX(300px);
+        background-color: green;
+    }
+
+    50% {
+        transform: translateY(300px);
+        transform: translateX(0);
+        background-color: blue;
+    }
+
+    62.5% {
+        transform: translate(300px, -300px);
+        background-color: yellow;
+    }
+
+    75% {
+        transform: translate(0, -300px);
+        background-color: red;
+    }
+
+    87.5% {
+        transform: translate(300px, -300px);
+        background-color: yellow;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        background-color: blue;
+    }
+
+}
+
+
+.watch {
+    width: 300px;
+    height: 300px;
+    background-image: url(./images/watch.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 2px solid gray;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 3;
+}
+
+.strelka_big {
+    width: 2px;
+    height: 100px;
+    background-color: gray;
+    position: relative;
+    top:-17%;
+    left:-6px;
+    animation: rotate_strelka 60s;
+    transform-origin: center bottom;
+    animation-timing-function:steps(360);
+    animation-fill-mode: forwards;
+
+}
+
+.strelka_small {
+    width: 2px;
+    height: 60px;
+    background-color: red;
+    position: relative;
+    top:-10%;
+    left:-7.5px;
+    animation: rotate_strelka 30s;
+    transform-origin: center bottom;
+    animation-fill-mode: forwards;
+    animation-timing-function:steps(360);
+    z-index: 2;
+}
+
+
+@keyframes rotate_strelka {
+    100% {
+        transform: rotate(360deg);    
+    }
+}
+
+
+
+
+
+
+
