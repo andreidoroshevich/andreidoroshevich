@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      let arr = [1, "cat", 35, "dog", 888, "hotdog"];
+      let newArr = [];
+      function numArr(array) {
+        for (let i = 0; i < array.length; i++) {
+          if (typeof array[i] != "number") {
+            continue;
+          } else {
+            newArr.push(array[i]);
+          }
+        }
+      }
+      numArr(arr);
+      console.log('Array - ' + '[' + arr + ']');
+      console.log('Only Numbers in Array - ' + '[' + newArr + ']');
+    </script>
+
+    <script>
+      let farm = [
+        "hare",
+        "hare",
+        "wolf",
+        "hare",
+        "wolf",
+        "wolf",
+        "wolf",
+        "hare",
+        "wolf",
+      ];
+      let hareArr = [];
+      let wolfArr = [];
+      function numArr(array) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] !== "hare") {
+            wolfArr.push(array[i]);
+          } else {
+            hareArr.push(array[i]);
+          }
+        }
+      }
+      numArr(farm);
+      console.log('Array - ' + '[' + farm + ']');
+      console.log('hare - ' + hareArr.length);
+      console.log('wolf - ' + wolfArr.length);
+    </script>
+
+    <script>
+      let intArr = [20, -20, 14, 11, 10, 1, 5, 8, 18];
+      let positiveArr = [];
+      function digitArr(array) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] < 0) {
+            continue;
+          } else {
+            positiveArr.push(array[i]);
+          }
+        }
+        for (let i = 0; i < array.length; i++) {
+          return Math.min.apply(Math, positiveArr);
+        }
+      }
+      digitArr(intArr);
+      console.log('Array is ' + '[' + intArr + ']');
+      console.log('Only Positive Array is ' + '[' + positiveArr + ']');
+      console.log('Minimal digit in Array is ' + digitArr(intArr));
+    </script>
+
+    <script>
+      let intArr1 = [20, -20, 14, 11, 10, 1, 5, 8, 18];
+      let positiveArr1 = [];
+      function digitArr1(array) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] < 0) {
+            continue;
+          } else {
+            positiveArr1.push(array[i]);
+          }
+        }
+      }
+
+      function compareNumeric(a, b) {
+        if (a > b) return 1;
+        if (a == b) return 0;
+        if (a < b) return -1;
+      }
+
+      positiveArr1.sort(compareNumeric);
+
+      digitArr1(intArr1);
+      console.log('Array is ' + '[' + intArr + ']');
+      console.log('Only Positive Array is  ' + '[' + positiveArr1 + ']');
+      console.log(
+        'Sort Array is ' + '[' + positiveArr1.sort(compareNumeric) + ']'
+      );
+      let sum = positiveArr1[0] + positiveArr1[1];
+      console.log('Sum of min numbers in Array is ' + sum);
+    </script>
+
+    <script>
+      function Middle(str) {
+        let pos;
+        if (str.length % 2 == 1) {
+          pos = str.length / 2;
+          return str.substring(pos, pos + 1);
+        } else {
+          pos = str.length / 2 - 1;
+          return str.substring(pos, pos + 2);
+        }
+      }
+
+      Middle("str");
+      console.log('Middle of mynameis - ' + Middle("mynameis"));
+      console.log('Middle of mysurnameis - ' + Middle("mysurnameis"));
+    </script>
+
+    <script>
+      let Arr2 = [2, 3, 2, 1, 1];
+      let result = 0;
+      function squareSum(number) {
+        for (let i = 0; i < number.length; i++) {
+          let square = number[i] * number[i];
+          result = result + square;
+        }
+      }
+
+      console.log('Array is ' + '[' + Arr2 + ']');
+      squareSum(Arr2);
+      console.log('Sum of square numbers - ' + result);
+    </script>
+
+    <script>
+      let Arr3 = [12, 2, -1, 0, -1, 1, 5, 7];
+      let positiveArr3 = [];
+      result1 = 0;
+      function sumArr2(array) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] <= 0) {
+            continue;
+          } else {
+            positiveArr3.push(array[i]);
+          }
+        }
+
+        for (let i = 0; i < positiveArr3.length; i++) {
+          if (positiveArr3.length != 0) {
+            result1 = result1 + positiveArr3[i];
+          } else {
+            result1 = 0;
+          }
+        }
+      }
+      sumArr2(Arr3);
+      console.log('Array is ' + '[' + Arr3 + ']');
+      console.log('Only Positive Array is ' + '[' + positiveArr3 + ']');
+      console.log('Sum of Positive Array Numbers - ' + result1);
+    </script>
+
+    <script>
+      function trueFalse(string) {
+        if (!!string) {
+          return 'No';
+        } else {
+          return 'Yes';
+        }
+      }
+      console.log(trueFalse(-1));
+    </script>
+
+
+    <script>
+      function numberSum3(num) {
+        let result3 = 0;
+        for (let i = 1; i <= num; i++) {
+          result3 = i + result3;
+        }
+        return result3;
+      }
+      numberSum3(12);
+      console.log('Sum from 1 to num - ' + numberSum3(12));
+    </script>
+
+    <script>
+      function negativeNumber(num) {
+        return -num;
+      }
+      negativeNumber(12);
+      console.log('Number ' + -negativeNumber(12));
+      console.log('Negative Number ' + negativeNumber(12));
+    </script>
+
+    <script>
+      function reverseString(str) {
+        return str.split("").reverse().join("");
+      }
+      console.log(reverseString("academy"));
+    </script>
+
+    <script>
+      function triangle(a, b, c) {
+        if (a + b > c && a + c > b && b + c > a) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(triangle(4, 5, 10));
+    </script>
+
+    <script>
+      let str = "Fix the Grammatical mistakes in your thesis";
+      function findLongestWord(str) {
+        let strSplit = str.split(" ");
+        let findLongestWord = 0;
+        for (var i = 0; i < strSplit.length; i++) {
+          if (strSplit[i].length > findLongestWord) {
+            findLongestWord = strSplit[i].length;
+          }
+        }
+        return findLongestWord;
+      }
+
+      function shortestWord(string) {
+        let stringArray = string.split(" ");
+        let shortestLength = stringArray[0].length;
+        for (let i = 0; i < stringArray.length; i++) {
+          if (stringArray[i].length < shortestLength) {
+            shortestWord = stringArray[i].length;
+          }
+        }
+        return shortestWord;
+      }
+
+      console.log('Our String - ' + str);
+      console.log('Length of Longest word - ' + findLongestWord(str));
+      console.log('Length of Shortest word - ' + shortestWord(str));
+    </script>
+
+    <script>
+      function sqrtNum(num2) {
+        if (Math.sqrt(num2) % 1 == 0 && num2 > 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(sqrtNum(36));
+      console.log(sqrtNum(15));
+    </script>
+
+    <script>
+      function firstLetters(str1) {
+        let res = "";
+        let strSplit = str1.split(" ");
+        for (let i = 0; i < strSplit.length; i++) {
+          res += strSplit[i].substring(0, 1) + ".";
+        }
+
+        if(res === '.') {
+          res = '';
+        }
+        return res;
+      }
+      console.log(firstLetters("A"));
+      console.log(firstLetters("IT Academy Course"));
+      console.log(firstLetters(""));
+    </script>
+
+    <script>
+      function intArr2(data) {
+        let sortArr = [];
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] != sortArr[sortArr.length - 1] || i == 0) {
+            sortArr.push(data[i]);
+          }
+        }
+        return sortArr;
+      }
+      console.log(intArr2("AAABbbCDEE"));
+    </script>
+  </body>
+</html>
